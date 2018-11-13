@@ -34,4 +34,18 @@ kermit_hist
 ```
 
 
+Perform a rank-based test 
+
+perform rank based comparisions using a mann-whitney u and and wilcoxon-signed rank?
+
+
+Is there a significant diference in pre-talk ranks of kermit for Male and Female respondents
+
+mwu_kermit <- kermit %>%
+wilcox.test(Score.pre ~ Gender, data =.)
+
+#Null: there is not a significant difference in ranks for male and female respondants
+#Alt: there is a significiant difference
+
+mwu_kermit
 
