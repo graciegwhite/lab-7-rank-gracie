@@ -41,6 +41,7 @@ perform rank based comparisions using a mann-whitney u and and wilcoxon-signed r
 
 Is there a significant diference in pre-talk ranks of kermit for Male and Female respondents
 
+```{r}
 mwu_kermit <- kermit %>%
 wilcox.test(Score.pre ~ Gender, data =.)
 
@@ -48,4 +49,22 @@ wilcox.test(Score.pre ~ Gender, data =.)
 #Alt: there is a significiant difference
 
 mwu_kermit
+
+```
+
+There was no significant difference in ranks for male and female respondents (W = 155.5m p = 0.4, alpha = 0.05)
+
+Next question (collaboration):
+Is there a significant cahnge in Kermit rankings before and after his Bren talk?
+
+```{r}
+# H0: There is not a significant difference in ranks for pre and post talk scores
+
+wsr_kermit <- wilcox.test(kermit$Score.pre, kermit$Score.post, paired = TRUE)
+wsr_kermit
+```
+There is no significant difference in ranks for pre and post talk kermit scores (statistical summary here...)
+
+
+
 
